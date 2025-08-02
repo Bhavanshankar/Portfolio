@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavan Shankar M - Creative Technologist & Digital Developer</title>
+    <meta name="description"
+        content="Immersive portfolio of Bhavan Shankar M - Where creativity meets technology in stunning digital experiences">
+    <meta property="og:title" content="Bhavan Shankar M - Creative Technologist Portfolio">
+    <meta property="og:description" content="Step into a world where art and code collide">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#00ff88',
+                        cyber: '#ff0080',
+                        electric: '#00d4ff',
+                        plasma: '#ff6b00',
+                        void: '#0a0a0f',
+                        'void-light': '#1a1a2e'
+                    },
+                    fontFamily: {
+                        'cyber': ['Orbitron', 'monospace'],
+                        'display': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a0a0f;
+            overflow-x: hidden;
+        }
+
+        .matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+        }
+
+        .hologram {
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 136, 0.1) 50%, transparent 70%);
+            background-size: 200% 200%;
+            animation: hologram-scan 3s linear infinite;
+            position: relative;
+        }
+
+        .hologram::before {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.2), transparent);
+            animation: hologram-sweep 2s linear infinite;
+        }
+
+        @keyframes hologram-scan {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            100% {
+                background-position: 200% 200%;
+            }
+        }
+
+        @keyframes hologram-sweep {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .floating-orb {
+
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: float-random 8s ease-in-out infinite;
+        }
+
+        @keyframes float-random {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(30px, -30px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(-20px, -60px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(-40px, -20px) rotate(270deg);
+            }
+        }
+
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #ff0080;
+            z-index: -1;
+        }
+
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #00d4ff;
+            z-index: -2;
+        }
+
+        @keyframes glitch {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        @keyframes glitch-1 {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(2px, -2px);
+            }
+
+            40% {
+                transform: translate(-2px, 2px);
+            }
+
+            60% {
+                transform: translate(-2px, -2px);
+            }
+
+            80% {
+                transform: translate(2px, 2px);
+            }
+        }
+
+        @keyframes glitch-2 {
+
+            0%,
+            100% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                transform: translate(2px, -2px);
+            }
+
+            60% {
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                transform: translate(-2px, -2px);
+            }
+        }
+
+        .cyber-grid {
+            background-image:
+                linear-gradient(rgba(0, 255, 136, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+
+        @keyframes grid-move {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        .morphing-blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 8s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+
+            0%,
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            25% {
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+            }
+
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+            }
+
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+            }
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: particle-float 6s linear infinite;
+        }
+
+        @keyframes particle-float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .skill-orb {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-orb:hover {
+            transform: scale(1.2) rotate(10deg);
+            filter: brightness(1.5);
+        }
+
+        .project-card {
+            background: rgba(26, 26, 46, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px) rotateX(10deg);
+            border-color: rgba(0, 255, 136, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .terminal-window {
+            background: rgba(10, 10, 15, 0.95);
+            border: 1px solid #00ff88;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+            border-right: 3px solid #00ff88;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #00ff88;
+            }
+        }
+
+        .neural-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .neural-node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            stroke-dasharray: 251.2;
+            stroke-dashoffset: 251.2;
+            transition: stroke-dashoffset 0.5s ease-in-out;
+        }
+
+        .contact-form {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .input-field {
+            background: rgba(10, 10, 15, 0.8);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #00ff88;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+            outline: none;
+        }
+
+        .cyber-button {
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cyber-button:hover::before {
+            left: 100%;
+        }
+
+        .cyber-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-void text-white">
+    <!-- Matrix Background -->
+    <canvas class="matrix-bg" id="matrix"></canvas>
+
+    <!-- Floating Orbs -->
+    <div class="floating-orb w-32 h-32 bg-neon/20 top-20 left-10 animate-pulse"></div>
+    <div class="floating-orb w-24 h-24 bg-cyber/20 top-40 right-20 animate-bounce"></div>
+    <div class="floating-orb w-16 h-16 bg-electric/20 bottom-40 left-1/4 animate-ping"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-void/80 backdrop-blur-md border-b border-neon/20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-cyber font-bold neon-text text-neon">
+                    BHAVAN.SYS
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-neon transition-colors">About</a>
+                    <a href="#skills" class="hover:text-neon transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-neon transition-colors">Projects</a>
+                    <a href="#experience" class="hover:text-neon transition-colors">Experience</a>
+                    <a href="#contact" class="hover:text-neon transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-neon">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden  ">
+        <div class="container text-center">
+            <div class="mb-8 mt-24">
+                <div class="inline-block p-1 rounded-full bg-gradient-to-r from-neon via-electric to-cyber">
+                    <img src="bhavan.jpg" alt="Bhavan Shankar M" class="w-48 h-48 rounded-full object-cover hologram">
+                </div>
+            </div>
+
+            <div class="space-y-4 mb-8">
+                <div class="font-cyber text-sm text-gray-400">
+                    <div class="mb-1">$ sudo su bhavan</div>
+                    <div class="mb-1">$ whoami</div>
+                </div>
+                <h1
+                    class="text-6xl md:text-8xl font-black font-cyber neon-text text-transparent bg-clip-text bg-gradient-to-r from-neon via-electric to-cyber leading-tight">
+                    BHAVAN
+                    <br>
+                    SHANKAR M
+                </h1>
+            </div>
+
+            <div class="text-xl md:text-2xl text-gray-300 mb-8 font-display">
+                Crafting immersive digital experiences where <span class="text-neon">engineering</span> meets
+                cutting-edge <span class="text-electric">technology</span>.
+                <br>
+                Specializing in AI-powered applications, interactive web experiences, and machine learning solutions.
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <div class="px-4 py-2 border border-neon/30 rounded-full text-neon font-cyber text-sm">
+                    Electronics & Communication Engineer
+                </div>
+                <div class="px-4 py-2 border border-electric/30 rounded-full text-electric font-cyber text-sm">
+                    SDE Developer
+                </div>
+                <div class="px-4 py-2 border border-cyber/30 rounded-full text-cyber font-cyber text-sm">
+                    Data Analysis
+                </div>
+            </div>
+
+            <div class="flex justify-center space-x-6">
+                <a href="#projects"
+                    class="px-8 py-3 bg-gradient-to-r from-neon to-electric text-black font-bold rounded-full hover:scale-105 transition-transform">
+                    View Projects
+                </a>
+                <a href="#contact"
+                    class="px-8 py-3 border border-neon text-neon hover:bg-neon hover:text-black transition-colors rounded-full">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Terminal About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div
+                class="terminal-window bg-void-light/50 backdrop-blur-sm border border-neon/20 rounded-lg max-w-4xl mx-auto">
+                <div
+                    class="terminal-header bg-void-light/80 px-4 py-2 flex items-center space-x-2 rounded-t-lg border-b border-neon/20">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="text-sm text-gray-400 ml-4 font-cyber">bhavan@portfolio:~$</div>
+                </div>
+                <div class="p-8">
+                    <div class="font-cyber text-neon mb-4">
+                        <div class="mb-1">$ cat about.txt</div>
+                    </div>
+
+                    <div class="text-gray-300 space-y-4 mb-8">
+                        <h2
+                            class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-neon to-electric">
+                            Decoding the engineer behind the innovation
+                        </h2>
+
+                        <p>
+                            I transform complex engineering concepts into elegant digital realities. With a background
+                            in
+                            Electronics & Communication Engineering and hands-on experience in software development,
+                            I bridge the gap between hardware understanding and creative software expression.
+                        </p>
+
+                        <p>
+                            My journey began with circuit designs and evolved through frontend development, machine
+                            learning,
+                            and now encompasses everything from AI-powered chatbots to computer vision applications that
+                            push the boundaries of what's possible.
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-neon font-cyber">90%</div>
+                                <div class="text-sm text-gray-400">ML Model Accuracy</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-electric font-cyber">8.27</div>
+                                <div class="text-sm text-gray-400">Academic CGPA</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl font-bold text-cyber font-cyber">3+</div>
+                                <div class="text-sm text-gray-400">Major Projects</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-20 bg-void-light/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 font-cyber neon-text">
+                <span class="text-neon">$</span> cat education.log
+            </h2>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="hologram border border-neon/30 rounded-lg p-8 bg-void-light/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-neon">Bachelor of Engineering</h3>
+                            <p class="text-xl text-electric">Electronics & Communication Engineering</p>
+                            <p class="text-gray-400">Panimalar Engineering College, Chennai</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold text-cyber font-cyber">8.27</div>
+                            <div class="text-sm text-gray-400">CGPA</div>
+                            <div class="text-sm text-gray-400">2022 - 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-void-light/30">
+        <div class="container mx-auto px-6">
+            <div
+                class="terminal-window bg-void-light/50 backdrop-blur-sm border border-neon/20 rounded-lg max-w-6xl mx-auto">
+                <div
+                    class="terminal-header bg-void-light/80 px-4 py-2 flex items-center space-x-2 rounded-t-lg border-b border-neon/20">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="text-sm text-gray-400 ml-4 font-cyber">bhavan@skills:~$</div>
+                </div>
+                <div class="p-8">
+                    <div class="font-cyber text-neon mb-8">
+                        <div class="mb-1">$ scan_skills --all</div>
+                        <div class="text-gray-400">Scanning technological arsenal...</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Programming Languages -->
+                        <div class="skill-category">
+                            <h3 class="text-xl font-bold text-electric mb-4">Languages</h3>
+                            <div class="space-y-2">
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Python</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-14 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>JavaScript</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-13 h-2 bg-electric rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Java</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-12 h-2 bg-cyber rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>C/C++</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-11 h-2 bg-plasma rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>SQL</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-12 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Frameworks -->
+                        <div class="skill-category">
+                            <h3 class="text-xl font-bold text-electric mb-4">Frameworks</h3>
+                            <div class="space-y-2">
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>React JS</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-14 h-2 bg-electric rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Node JS</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-13 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Django</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-12 h-2 bg-cyber rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Express JS</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-11 h-2 bg-plasma rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>MongoDB</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-10 h-2 bg-electric rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tools -->
+                        <div class="skill-category">
+                            <h3 class="text-xl font-bold text-electric mb-4">Tools</h3>
+                            <div class="space-y-2">
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Git</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-14 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Docker</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-12 h-2 bg-electric rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>AWS</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-11 h-2 bg-cyber rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>VS Code</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-15 h-2 bg-plasma rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>PyCharm</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-13 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Libraries -->
+                        <div class="skill-category">
+                            <h3 class="text-xl font-bold text-electric mb-4">ML Libraries</h3>
+                            <div class="space-y-2">
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Pandas</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-14 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>NumPy</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-13 h-2 bg-electric rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Scikit-learn</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-12 h-2 bg-cyber rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>OpenCV</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-13 h-2 bg-plasma rounded-full"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item flex items-center justify-between p-2 rounded bg-void-light/30">
+                                    <span>Matplotlib</span>
+                                    <div class="w-16 h-2 bg-void-light rounded-full">
+                                        <div class="w-11 h-2 bg-neon rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 font-cyber neon-text">
+                <span class="text-neon">$</span> ls -la ./projects/
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- AI Chatbot -->
+                <div
+                    class="project-card hologram border border-neon/30 rounded-lg p-8 bg-void-light/20 hover:border-neon/60 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-neon">AI-Powered Chatbot</h3>
+                        <div class="text-xs text-gray-400 font-cyber">React, JS, ML</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Designed and developed an intelligent chatbot with multi-language voice access,
+                        achieving 90%+ accuracy. Features real-time conversation processing and natural language
+                        understanding.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">React JS</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">Voice AI</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">HTML/CSS</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <div class="flex items-center mr-4">
+                            <div class="w-2 h-2 bg-neon rounded-full mr-2"></div>
+                            90% Accuracy
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-electric rounded-full mr-2"></div>
+                            Multi-language
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heart Disease Prediction -->
+                <div
+                    class="project-card hologram border border-electric/30 rounded-lg p-8 bg-void-light/20 hover:border-electric/60 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-electric">Heart Disease Prediction</h3>
+                        <div class="text-xs text-gray-400 font-cyber">Python, ML</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Built and deployed a machine learning model using logistic regression and random forest
+                        algorithms.
+                        Achieved 90% accuracy in predicting heart disease with ethical data practices.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">Python</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">Scikit-learn</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">Random Forest</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">Healthcare</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <div class="flex items-center mr-4">
+                            <div class="w-2 h-2 bg-electric rounded-full mr-2"></div>
+                            90% Accuracy
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-neon rounded-full mr-2"></div>
+                            Deployed
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drivers Guardian Vision 2.0 -->
+                <div
+                    class="project-card hologram border border-cyber/30 rounded-lg p-8 bg-void-light/20 hover:border-cyber/60 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-cyber">Drivers Guardian Vision 2.0</h3>
+                        <div class="text-xs text-gray-400 font-cyber">Python, OpenCV</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Advanced web application for driver safety using computer vision. Features drowsiness detection,
+                        mobile usage detection, speed monitoring, and emergency alerts with deep learning models.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">Python</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">OpenCV</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">Deep Learning</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">Computer Vision</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <div class="flex items-center mr-4">
+                            <div class="w-2 h-2 bg-cyber rounded-full mr-2"></div>
+                            Real-time Detection
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-plasma rounded-full mr-2"></div>
+                            Safety Features
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Netflix Clone -->
+                <div
+                    class="project-card hologram border border-plasma/30 rounded-lg p-8 bg-void-light/20 hover:border-plasma/60 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-2xl font-bold text-plasma">Netflix Clone & Portfolio</h3>
+                        <div class="text-xs text-gray-400 font-cyber">Frontend</div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Created a pixel-perfect Netflix clone and dynamic portfolio website during IBM SkillsBuild
+                        internship.
+                        Focused on computational efficiency and code optimization.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">HTML/CSS</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">Responsive</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">UI/UX</span>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <div class="flex items-center mr-4">
+                            <div class="w-2 h-2 bg-plasma rounded-full mr-2"></div>
+                            Responsive Design
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-electric rounded-full mr-2"></div>
+                            Optimized Code
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-void-light/30">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 font-cyber neon-text">
+                <span class="text-neon">$</span> cat experience.log
+            </h2>
+
+            <div class="max-w-4xl mx-auto space-y-8">
+                <!-- Frontend Intern - Postulate InfoTech -->
+                <div class="experience-item hologram border border-neon/30 rounded-lg p-8 bg-void-light/20">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-neon">Frontend Intern</h3>
+                            <p class="text-xl text-electric">Postulate InfoTech</p>
+                            <p class="text-gray-400">Remote</p>
+                        </div>
+                        <div class="text-right mt-4 md:mt-0">
+                            <div class="text-cyber font-cyber">June 2024 - July 2024</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Designed and developed an intelligent chatbot application using modern frontend technologies.
+                        Enhanced user interaction and experience through React JS implementation.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">HTML</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">CSS</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">JavaScript</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">React JS</span>
+                    </div>
+                </div>
+
+                <!-- Data Analytics - Kelton -->
+                <div class="experience-item hologram border border-electric/30 rounded-lg p-8 bg-void-light/20">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-electric">Data Analytics Intern</h3>
+                            <p class="text-xl text-cyber">Kelton</p>
+                            <p class="text-gray-400">Kerala, India</p>
+                        </div>
+                        <div class="text-right mt-4 md:mt-0">
+                            <div class="text-cyber font-cyber">June 2024</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Implemented supervised and unsupervised machine learning algorithms using Python libraries.
+                        Worked on complex ML projects achieving 95%+ accuracy across different domains.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">Python</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">Machine
+                            Learning</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">Data Analysis</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">95% Accuracy</span>
+                    </div>
+                </div>
+
+                <!-- Frontend Intern - EDUNET IBM -->
+                <div class="experience-item hologram border border-cyber/30 rounded-lg p-8 bg-void-light/20">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyber">Frontend Intern</h3>
+                            <p class="text-xl text-plasma">EDUNET (IBM SkillsBuild)</p>
+                            <p class="text-gray-400">Remote</p>
+                        </div>
+                        <div class="text-right mt-4 md:mt-0">
+                            <div class="text-cyber font-cyber">June 2023 - July 2023</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Created a Netflix clone and dynamic portfolio website. Focused on improving computational
+                        efficiency and reducing code complexity through optimized frontend development practices.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 text-xs bg-neon/20 text-neon rounded-full">Frontend Development</span>
+                        <span class="px-3 py-1 text-xs bg-electric/20 text-electric rounded-full">Code
+                            Optimization</span>
+                        <span class="px-3 py-1 text-xs bg-cyber/20 text-cyber rounded-full">Responsive Design</span>
+                        <span class="px-3 py-1 text-xs bg-plasma/20 text-plasma rounded-full">Performance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-void-light/30">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-8 font-cyber neon-text">
+                    <span class="text-neon">$</span> initialize_connection()
+                </h2>
+
+                <p class="text-xl text-gray-300 mb-12">
+                    Ready to build something extraordinary together? Let's connect and transform ideas into digital
+                    reality.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="contact-method hologram border border-neon/30 rounded-lg p-6 bg-void-light/20">
+                        <div class="text-3xl mb-4">📧</div>
+                        <h3 class="text-xl font-bold text-neon mb-2">Email</h3>
+                        <p class="text-gray-400">bhavan9304@gmail.com</p>
+                    </div>
+
+                    <div class="contact-method hologram border border-electric/30 rounded-lg p-6 bg-void-light/20">
+                        <div class="text-3xl mb-4">🔗</div>
+                        <h3 class="text-xl font-bold text-electric mb-2">LinkedIn</h3>
+                        <p class="text-gray-400">www.linkedin.com/in/bhavan-shankar-m</p>
+                    </div>
+
+                    <div class="contact-method hologram border border-cyber/30 rounded-lg p-6 bg-void-light/20">
+                        <div class="text-3xl mb-4">📱</div>
+                        <h3 class="text-xl font-bold text-cyber mb-2">Phone</h3>
+                        <p class="text-gray-400">+91 8778934798</p>
+                    </div>
+                </div>
+
+                <div class="contact-form p-8 rounded-2xl border border-neon/20 bg-void-light/20 hologram">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name"
+                                class="w-full p-4 bg-void-light/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-neon focus:outline-none">
+                            <input type="email" placeholder="Your Email"
+                                class="w-full p-4 bg-void-light/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-neon focus:outline-none">
+                        </div>
+                        <input type="text" placeholder="Subject"
+                            class="w-full p-4 bg-void-light/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-neon focus:outline-none">
+                        <textarea rows="6" placeholder="Your Message"
+                            class="w-full p-4 bg-void-light/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-neon focus:outline-none resize-none"></textarea>
+                        <button type="submit"
+                            class="w-full py-4 bg-gradient-to-r from-neon to-electric text-black font-bold rounded-lg hover:scale-105 transition-transform">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-neon/20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-2xl font-cyber font-bold neon-text text-neon mb-4">
+                BHAVAN.SYS
+            </div>
+            <p class="text-gray-400 mb-6">
+                Crafting digital experiences where engineering meets creativity
+            </p>
+            <div class="flex justify-center space-x-6 text-sm text-gray-400">
+                <span>© 2025 Bhavan Shankar M</span>
+                <span>•</span>
+                <span>All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Matrix Background Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
+        const matrixArray = matrix.split("");
+
+        const fontSize = 10;
+        const columns = canvas.width / fontSize;
+
+        const drops = [];
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+
+        function draw() {
+            ctx.fillStyle = 'rgba(10, 10, 15, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff88';
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        setInterval(draw, 35);
+
+        // Resize canvas on window resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function () {
+                // Add mobile menu functionality here
+                console.log('Mobile menu clicked');
+            });
+        }
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for scroll animations
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Initialize first section
+        document.querySelector('section').style.opacity = '1';
+        document.querySelector('section').style.transform = 'translateY(0)';
+    </script>
+</body>
+
+</html>
