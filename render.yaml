@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: portfolio-smtp-api
+    runtime: python
+    buildCommand: ""
+    startCommand: python smtp_server.py
+    envVars:
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USERNAME
+        value: skillx192@gmail.com
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM
+        value: skillx192@gmail.com
+      - key: SMTP_TO
+        value: skillx192@gmail.com
+      - key: SMTP_USE_TLS
+        value: "true"
+      - key: ALLOWED_ORIGINS
+        sync: false
